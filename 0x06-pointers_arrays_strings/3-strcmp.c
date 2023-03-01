@@ -7,31 +7,15 @@
  * Return: int that tells num spaces in between
  */
 
-unsigned int _strspn(char *s, char *accept)
+int _strcmp(char *s1, char *s2)
 {
-	int i;
-	int j;
-	int c;
+	int i = 0;
 
-	i = 0;
-	c = 0;
-
-	while (s[i] != '\0')
-	{
-		j = 0;
-		while (accept[j] != '\0')
-		{
-			if (s[i] == accept[j])
-			{
-				c++;
-				break;
-			}
-			j++;
-		}
-		if (accept[j] == '\0')
-			break;
+	while (*(s1 + i) == *(s2 + i) && *(s1 + i))
 		i++;
-	}
-	return (c);
+
+	if (*(s2 + i))
+		return (*(s1 + i) - *(s2 + i));
+	else
+		return (0);
 }
-/** code by DrKayPh */                     i 
