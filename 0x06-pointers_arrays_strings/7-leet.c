@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdio.h>
-
 /**
  * leet - encode string into 1337 leet
  * @s: string to manipulate
@@ -26,4 +25,3 @@ char *leet(char *s)
 
 	return (s);
 }
-/** code by DrKayPh */ 
