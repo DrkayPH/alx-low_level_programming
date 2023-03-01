@@ -7,15 +7,17 @@
  * @n: number of elements in array
  */
 
-void reverse_array(int *a, int n);
+void reverse_array(int *a, int n)
 {
-	int i;
-	int h;
 
-	for (i = 0; i < (n / 2); i++)
+	int tmp, beg = 0;
+	int end = n - 1; /* omit null terminator in length */
+
+	while (beg < end)
 	{
-		h = a[i];
-		a[i] = a[n - i - 1];
-		a[n - i - 1] = h;
+		tmp = *(a + beg);
+		*(a + beg) = *(a + end);
+		*(a + end) = tmp;
+		beg++, end--;
 	}
-}        
+}
