@@ -1,19 +1,33 @@
 #include "main.h"
-
 /**
- * is_prime - recursively divide by higher divisor, skip even nums
- * @n: number to check if prime
- * @divisor: divisor
- * Return: 1 if prime, 0 if not, or recursive function call
+ * _sqrt_recursion - return the natural square root of a number
+ * @n: int number
+ * Return: If no natural square root, return -1. Else return natural
+ * square root
  */
 
-int is_prime(int n, int divisor)
+int _sqrt_recursion(int n)
 {
-	if (n == divisor)
-		return (1);
-	if (n % divisor == 0)
-		return (0);
-	return (is_prime(n, divisor + 1));
+	return (help(n, 1));
+}
 
+/**
+ * helpr - helper function to solve _sqrt_recursion
+ * @c: number to determine if square root
+ * @i: incrementer to compare against `c`
+ * Return: square root if natural square root, or -1 if none found
+ */
+
+int helpr(int c, int i)
+{
+	int square;
+
+	square = i * i;
+	if (square == c)
+		return (i);
+	else if (square < c)
+		return (helpr(c, i + 1));
+	else
+		return (-1);
 }
 /** code by DrKayPh */
